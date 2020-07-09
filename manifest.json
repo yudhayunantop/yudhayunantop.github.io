@@ -1,0 +1,27 @@
+{
+    "name": "BolaPedia",
+    "short_name": "BolaPedia",
+    "description": "Aplikasi yang membahas tim dari Premiere League",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#00897B",
+    "theme_color": "#00897B",
+    "gcm_sender_id": "648272738768",
+    "icons": [{
+            "src": "/icon/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon/icon-96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon/icon-48.png",
+            "sizes": "48x48",
+            "type": "image/png"
+        }
+
+    ]
+}
