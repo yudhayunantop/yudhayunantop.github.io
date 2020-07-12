@@ -82,24 +82,7 @@ function getSavedTeams() {
     getAll().then(function (teams) {
         console.log(teams);
         // Menyusun komponen card artikel secara dinamis
-        var teamsHTML = "";
-        teams.forEach(function (teams) {
-            teamsHTML += `
-                <div class="card">
-                    <a href = "/teamDelete.html?id=${teams.id}" >
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <img src="${teams.crestUrl}" width="50" class="responsive-img featured-image" alt="logo ${teams.shortName}"/>
-                        </div>
-                    </a>
-                    <div class="card-content">
-                        <a href="${teams.website}" target="_blank">${teams.website}</a>
-                        <span class="card-title truncate">${teams.name} / ${teams.tla}</span>
-                    </div>
-                </div>
-                `;
-        });
-        // Sisipkan komponen card ke dalam elemen dengan id #body-content
-        document.getElementById("Teams").innerHTML = teamsHTML;
+        renderDaftar(teams);
     });
 }
 
