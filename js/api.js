@@ -82,7 +82,24 @@ function getSavedTeams() {
     getAll().then(function (teams) {
         console.log(teams);
         // Menyusun komponen card artikel secara dinamis
-        renderDaftar(teams);
+        var teamsHTML = "";
+        teams.forEach(function (teams) {
+            teamsHTML += `
+                        <div class="row">
+                            <div class="col s12 m4 l2">
+                                <img src="${teams.crestUrl}" class="responsive-img icon" alt="logo ${teams.shortName}"/>
+                            </div>
+                            <div class = "col s12 m4 l8 grey" >
+                                <a href = "/team.html?id=${teams.id}">
+                                    <span class="card-title truncate">${teams.name} / ${teams.tla}</span>
+                                </a>
+                                <a href="${teams.website}" target="_blank">${teams.website}</a>
+                            </div>
+                        </div>
+                        `;
+        });
+        // Sisipkan komponen card ke dalam elemen dengan id #body-content
+        document.getElementById("Teams").innerHTML = teamsHTML;
     });
 }
 
