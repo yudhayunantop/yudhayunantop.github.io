@@ -40,6 +40,10 @@ if (workbox) {
             url: '/css/materialize.min.css',
             revision: '2'
         },
+        {
+            url: '/css/style.css',
+            revision: '2'
+        },
 
         //icon
         {
@@ -62,6 +66,10 @@ if (workbox) {
         },
         {
             url: '/js/db.js',
+            revision: '2'
+        },
+        {
+            url: '/js/delete.js',
             revision: '2'
         },
         {
@@ -88,6 +96,10 @@ if (workbox) {
             url: '/js/render.js',
             revision: '2'
         },
+        {
+            url: '/js/team.js',
+            revision: '2'
+        },
         //page
         {
             url: '/pages/about.html',
@@ -106,11 +118,41 @@ if (workbox) {
             revision: '2'
         }
     ]);
-
+    //'./team.html', './teamDelete.html'
     workbox.routing.registerRoute(
         new RegExp('https://api.football-data.org/v2/teams/'),
         workbox.strategies.staleWhileRevalidate({
             cacheName: 'bola-pedia',
+            plugins: [
+                new workbox.cacheableResponse.Plugin({
+                    statuses: [200],
+                }),
+                new workbox.expiration.Plugin({
+                    masAgeSeconds: 60 * 60 * 24 * 365,
+                    maxEntries: 60,
+                }),
+            ]
+        })
+    );
+    workbox.routing.registerRoute(
+        new RegExp('./team.html'),
+        workbox.strategies.staleWhileRevalidate({
+            cacheName: 'bola-pedia3',
+            plugins: [
+                new workbox.cacheableResponse.Plugin({
+                    statuses: [200],
+                }),
+                new workbox.expiration.Plugin({
+                    masAgeSeconds: 60 * 60 * 24 * 365,
+                    maxEntries: 60,
+                }),
+            ]
+        })
+    );
+    workbox.routing.registerRoute(
+        new RegExp('./teamDelete.html'),
+        workbox.strategies.staleWhileRevalidate({
+            cacheName: 'bola-pedia4',
             plugins: [
                 new workbox.cacheableResponse.Plugin({
                     statuses: [200],

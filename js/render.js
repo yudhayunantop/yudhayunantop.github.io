@@ -2,15 +2,15 @@ function renderDaftar(data) {
     var TeamsHTML = "";
     data.teams.forEach(function (Teams) {
         TeamsHTML += `
-                        <div class="card">
-                            <a href = "/team.html?id=${Teams.id}" >
-                                <div class="card-image waves-effect waves-block waves-light">
-                                    <img src="${Teams.crestUrl}" width="50" class="responsive-img featured-image" alt="logo ${Teams.shortName}"/>
-                                </div>
-                            </a>
-                            <div class="card-content">
+                        <div class="row">
+                            <div class="col s12 m4 l2">
+                                <img src="${Teams.crestUrl}" class="responsive-img icon" alt="logo ${Teams.shortName}"/>
+                            </div>
+                            <div class = "col s12 m4 l8 grey" >
+                                <a href = "/team.html?id=${Teams.id}">
+                                    <span class="card-title truncate">${Teams.name} / ${Teams.tla}</span>
+                                </a>
                                 <a href="${Teams.website}" target="_blank">${Teams.website}</a>
-                                <span class="card-title truncate">${Teams.name} / ${Teams.tla}</span>
                             </div>
                         </div>
                         `;
@@ -22,7 +22,7 @@ function renderID(team) {
     var teamsHTML = `
                     <div class="card">
                         <div class="card-image waves-effect waves-block waves-light">
-                            <img src = "${team.crestUrl}" class = "responsive-img  featured-image" alt = "logo ${team.shortName}" / >
+                            <img src = "${team.crestUrl}" class = "responsive-img featured-image" alt = "logo ${team.shortName}" / >
                         </div>
                         <div class="card-content">
                             <span class="card-title">${team.name} / ${team.tla}</span>

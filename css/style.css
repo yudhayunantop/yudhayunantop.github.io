@@ -1,0 +1,14 @@
+        .icon {
+            width: 30px;
+            object-position: center;
+        }
+
+        .featured-image {
+            width: 100%;
+            max-height: 300px;
+            object-position: center;
+        }
+
+        span {
+            color: white;
+        }

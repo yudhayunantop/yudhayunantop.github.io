@@ -21,7 +21,7 @@
         var item = getSavedTeamsById();
 
         btnDelete.onclick = function () {
-            showNotifikasiIkonHapus();
+            showNotifikasiIkonHapus()
             console.log("Tombol Delete di klik.");
             deleteFav(id);
         };

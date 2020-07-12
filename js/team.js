@@ -22,7 +22,7 @@
 
         btnSave.onclick = function () {
             console.log("Tombol FAB di klik.");
-            showNotifikasiIkon();
+            showNotifikasiIkon()
             item.then(function (team) {
                 saveForLater(team);
             });
