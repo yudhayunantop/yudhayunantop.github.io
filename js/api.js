@@ -90,7 +90,7 @@ function getSavedTeams() {
                                 <img src="${teams.crestUrl}" class="responsive-img icon" alt="logo ${teams.shortName}"/>
                             </div>
                             <div class = "col s12 m4 l8 grey" >
-                                <a href = "/team.html?id=${teams.id}">
+                                <a href = "/teamDelete.html?id=${teams.id}">
                                     <span class="card-title truncate">${teams.name} / ${teams.tla}</span>
                                 </a>
                                 <a href="${teams.website}" target="_blank">${teams.website}</a>
