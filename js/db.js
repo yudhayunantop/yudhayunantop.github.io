@@ -1,4 +1,4 @@
-var dbPromised = idb.open("bola-pedia", 1, function (upgradeDb) {
+var dbPromised = idb.open("bola-pedia", 2, function (upgradeDb) {
     var articlesObjectStore = upgradeDb.createObjectStore("teams", {
         keyPath: "id"
     });
